@@ -23,3 +23,39 @@ function theme_enqueue_styles() {
         wp_enqueue_script( 'comment-reply' );
     }
 }
+
+
+function dib_theme_social_menu( $atts ) {
+    return wp_nav_menu(
+                array(
+                    'theme_location'  => 'social',
+                    'echo'            => false,
+                    'container_class' => '',
+                    'container_id'    => '',
+                    'menu_class'      => 'list-inline',
+                    'fallback_cb'     => '',
+                    'menu_id'         => $atts['id'],
+                    'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+                )
+            );
+}
+add_shortcode( 'render_social_menu', 'dib_theme_social_menu' );
+
+add_action( 'after_setup_theme', 'dib_theme_setup' );
+if ( ! function_exists ( 'dib_theme_setup' ) ) {
+    /**
+     * Sets up theme defaults and registers support for various WordPress features.
+     *
+     * Note that this function is hooked into the after_setup_theme hook, which
+     * runs before the init hook. The init hook is too late for some features, such
+     * as indicating support for post thumbnails.
+     */
+    function dib_theme_setup() {
+        // This theme uses wp_nav_menu() in one location.
+        register_nav_menus( array(
+            'secondary' => "Oben rechts",
+            'social' => "Soziale Medien Kanäle",
+            'footer' => "Unten rechts",
+        ) );
+    }
+}

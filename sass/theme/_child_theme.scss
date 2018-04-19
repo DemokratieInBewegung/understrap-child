@@ -1,0 +1,179 @@
+body {
+  &::before {
+    background: linear-gradient(90deg, #21466b, #62388E, #eb5c4a);
+    content: "";
+    height: 5px;
+    display: block;
+  }
+  font-weight: 300;
+}
+
+#wpadminbar {
+  background: linear-gradient(90deg, #21466b, #62388E, #eb5c4a) !important;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 500;
+}
+
+.btn {
+  font-family: $headings-font-family;
+}
+
+.navbar {
+  font-family: $headings-font-family;
+  font-size: 1em;
+
+  .nav-item {
+    margin-left: 1em;
+  }
+  a {
+    color: black;
+    font-weight: 400;
+    opacity: 1;
+  }
+}
+.btn {
+  &.text-white a.nav-link {
+    color: $white;
+    padding: 0;
+  }
+}
+
+.menu-item.text-primary a {
+  color: $primary;
+}
+
+body.home .entry-header {
+  display: none;
+}
+
+#inline-social-menu-home a {
+  color: black;
+} 
+
+.inline-icon {
+  display:inline-block;
+  width: 2em;
+  line-height: 2em; 
+  height: 2em;
+  padding: 0;
+  svg {
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+footer {
+  &.bd-footer {
+    background: $blue;
+    color: white;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        padding-right: 1em;
+      }
+    }
+    a {
+      color: white;
+    }
+  }
+  &.page-end {
+    background: $gray-200;
+    .widget-title {
+      font-size: $h5-font-size;
+    }
+    .menu {
+      @include list-unstyled;
+    }
+    a, a:hover {
+      color: $black;
+    }
+  }
+}
+
+main {
+  h2 {
+    margin-top: 2em;
+    margin-bottom: 0.30em;
+  }
+
+  h3 {
+    margin-top: 1.25em;
+    margin-bottom: 0.45em;
+  }
+
+  .btn {
+      margin: 1em;
+  }
+}
+
+.card-header-overlay {
+  position: relative;
+  .card-header {
+    position: absolute;
+    bottom: 0;
+    // left: 50%;
+    // width: 100%; 
+    // transform: translateX(-100%);
+      background: transparentize($white, .2);
+      width: 100%;
+    .card-title {
+      background: transparentize($blue, .2);
+      padding: 0.1em 0em;
+      display: inline;
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+quote {
+  // &:before {
+  //   content: "\"";
+  //   font-size: 4em;
+  //   color: rgba(255, 255, 255, 0.6);
+  //   display: inline-block;
+  //   margin: -100%;
+  // }
+  &:first-letter {
+    font-size: 2em;
+  }
+}
+
+
+.donate {
+  .form-check-input {
+    display: none;
+  }
+  .form-check-label, .custom {
+    width: 100%;
+    line-height: 2em;
+    text-align: center;
+    display: block;
+    color: white;
+    border: 1px solid white;
+    background: transparent;
+  }
+  .form-check-input:checked + .form-check-label {
+    background: $akz-pink;
+    color: $white;
+    border-color: $akz-lightpink;
+  }
+
+  .outline {
+    background: transparent;
+    color: white;
+    margin-right: 1px;
+    &::placeholder {
+      color: white;
+      font-style: italic;
+    }
+  }
+}

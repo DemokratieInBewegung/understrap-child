@@ -6,9 +6,83 @@
 // Just add your color code here, compile the theme.scss file to change this color everywhere
 
 
-//
-// Color system
-//
 
-$primary: #7C008C;
+// our own THEME: DiB-2018+
 
+$brand1:      #274f9e;
+$brand2:      #eb5c4a;
+$muted:       #dddddd;
+$white:       #ffffff;
+$black:       #000000;
+
+$primary:       $brand1;
+$secondary:     $muted;
+
+// interactions
+$success:       #28a745;
+$info:          #4a88eb;
+$warning:       #ffc107;
+$danger:        #dc3545;
+
+// akzent colors
+$akz-blue:        #4a88eb;
+$akz-lightblue:   #a4c3f5;
+$akz-darkblue:    #2c518d;
+$akz-purple:      #9B69BA;
+$akz-green:       #4aebad;
+$akz-lightgreen:  #a4f5d6;
+$akz-darkgreen:   #2c8d68;
+$akz-yellow:      #d8eb4a;
+$akz-lightyellow: #ebf5a4;
+$akz-darkyellow:  #828d2c;
+$akz-pink:        #eb4a88;
+$akz-lightpink:   #f5a4c3;
+$akz-darkpink:    #8e2c52;
+$akz-grey:        #dddddd;
+$breadcrumb-gray: #ced4da; 
+
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+  "brand-primary": $brand1,
+  "brand-secondary": $brand2,
+  "akz-blue": $akz-blue, 
+  "akz-lightblue": $akz-lightblue,
+  "akz-darkblue": $akz-darkblue,
+  "akz-purple": $akz-purple,
+  "akz-green": $akz-green,
+  "akz-lightgreen": $akz-lightgreen,
+  "akz-darkgreen": $akz-darkgreen,
+  "akz-yellow": $akz-yellow, 
+  "akz-lightyellow": $akz-lightyellow, 
+  "akz-darkyellow": $akz-darkyellow,
+  "akz-pink": $akz-pink, 
+  "akz-lightpink": $akz-lightpink,
+  "akz-darkpink": $akz-darkpink,
+  "akz-grey": $akz-grey,
+  "akz-muted": $muted,     
+  "akz-white": $white,
+  "akz-black": $black,
+), $theme-colors);
+
+
+// we like the corners slightly rounded
+$border-radius:               .125rem;
+$border-radius-lg:            .15rem;
+$border-radius-sm:            .1rem;
+
+// but our buttons sharp
+$btn-border-radius:    0;
+$btn-border-radius-lg: 0;
+$btn-border-radius-sm: 0;
+
+
+$font-family-sans-serif:      "Merriweather", serif !default;
+$headings-font-family:      "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+;
+
+
+$breadcrumb-bg:                     transparent;
+$breadcrumb-divider-color:          $breadcrumb-gray;
+$breadcrumb-active-color:           $breadcrumb-gray;
+$breadcrumb-divider:                "·";
