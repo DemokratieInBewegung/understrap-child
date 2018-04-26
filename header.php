@@ -60,7 +60,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<span class="fa fa-bars"></span>
 				</button>
 
-    			<div class="collapse navbar-collapse p-0 m-0 col d-md-flex justify-content-between" id="navbarNavDropdown">
+    			<div class="collapse navbar-collapse p-0 m-0 col d-lg-flex justify-content-between" id="navbarNavDropdown">
 
 					<!-- The WordPress Menu goes here -->
 					<?php wp_nav_menu(
@@ -79,7 +79,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php wp_nav_menu(
 						array(
 							'theme_location'  => 'secondary',
-							'container_class' => 'justify-content-end mt-3 mr-3 mr-md-0 mt-md-0',
+							'container_class' => 'justify-content-end mt-3 mr-3 mr-lg-0 mt-lg-0',
 							'container_id'    => '',
 							'menu_class'      => 'navbar-nav',
 							'fallback_cb'     => '',
