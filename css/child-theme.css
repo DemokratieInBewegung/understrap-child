@@ -12543,6 +12543,30 @@ body.home .entry-header {
 #inline-social-menu-home a {
   color: black; }
 
+.whiteframe {
+  padding: 0;
+  border: 10px solid white; }
+
+.bw-hovering {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-filter: gray;
+          filter: gray;
+  /* IE 6-9 */
+  -webkit-transition: -webkit-filter 1s ease;
+  transition: -webkit-filter 1s ease;
+  transition: filter 1s ease;
+  transition: filter 1s ease, -webkit-filter 1s ease; }
+  .bw-hovering:hover {
+    -webkit-filter: unset;
+    -moz-filter: unset;
+    -ms-filter: unset;
+    -o-filter: unset;
+    filter: unset; }
+
 .inline-icon {
   display: inline-block;
   width: 2em;
