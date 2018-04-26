@@ -170,34 +170,10 @@ quote {
     font-size: 2em;
   }
 }
+// pages
 
+@import "ultrawide";
 
-.donate {
-  .form-check-input {
-    display: none;
-  }
-  .form-check-label, .custom {
-    width: 100%;
-    line-height: 2em;
-    text-align: center;
-    display: block;
-    color: white;
-    border: 1px solid white;
-    background: transparent;
-  }
-  .form-check-input:checked + .form-check-label {
-    background: $akz-pink;
-    color: $white;
-    border-color: $akz-lightpink;
-  }
-
-  .outline {
-    background: transparent;
-    color: white;
-    margin-right: 1px;
-    &::placeholder {
-      color: white;
-      font-style: italic;
-    }
-  }
-}
+// elements
+@import "elements/checklist";
+@import "elements/_donate";

@@ -12631,6 +12631,55 @@ main .wpcf7 input[type=submit], .wpcf7 main input[type=submit] {
 quote:first-letter {
   font-size: 2em; }
 
+.ultrawide {
+  font-size: 1.5em;
+  font-weight: 300; }
+  .ultrawide .entry-title {
+    display: none; }
+  .ultrawide h1 {
+    font-size: 2.75em;
+    font-weight: 300; }
+  .ultrawide h2 {
+    font-size: 2.25em;
+    font-weight: 300; }
+  .ultrawide h3 {
+    font-size: 2em;
+    font-weight: 300; }
+  .ultrawide h4 {
+    font-size: 1.5em;
+    font-weight: 300; }
+  .ultrawide p {
+    margin: 0 auto 1em auto;
+    max-width: 80ch;
+    font-weight: 300; }
+  .ultrawide .spaced {
+    margin-top: 3em; }
+  .ultrawide .doublespaced {
+    margin-top: 6em; }
+  .ultrawide .wp-block-image img {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-filter: gray;
+            filter: gray;
+    /* IE 6-9 */
+    -webkit-transition: -webkit-filter 1s ease;
+    transition: -webkit-filter 1s ease;
+    transition: filter 1s ease;
+    transition: filter 1s ease, -webkit-filter 1s ease; }
+  .ultrawide .wp-block-image:hover img {
+    -webkit-filter: unset;
+    -moz-filter: unset;
+    -ms-filter: unset;
+    -o-filter: unset;
+    filter: unset; }
+
+ul.list-checkmarks li:before {
+  content: "✔️";
+  display: inline-block; }
+
 .donate .form-check-input {
   display: none; }
 

@@ -1,0 +1,64 @@
+.ultrawide {
+  font-size: 1.5em;
+  font-weight: 300;
+
+  .entry-title {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2.75em;
+    font-weight: 300;
+  }
+
+  h2 {
+    font-size: 2.25em;
+    font-weight: 300;
+  }
+
+  h3 {
+    font-size: 2em;
+    font-weight: 300;
+  }
+
+  h4 {
+    font-size: 1.5em;
+    font-weight: 300;
+  }
+  
+  p {
+    margin: 0 auto 1em auto;
+    max-width: 80ch;
+    font-weight: 300;
+  }
+
+
+  .spaced {
+    margin-top: 3em;
+  }
+
+  .doublespaced {
+    margin-top: 6em;
+  }
+
+  .wp-block-image {
+    img {
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      filter: grayscale(100%);
+      filter: gray;
+      /* IE 6-9 */
+      ;
+      transition: filter 1s ease;
+    }
+    &:hover img {
+      -webkit-filter: unset;
+      -moz-filter: unset;
+      -ms-filter: unset;
+      -o-filter: unset;
+      filter: unset;
+    }
+  }
+}
