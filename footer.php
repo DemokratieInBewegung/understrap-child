@@ -13,7 +13,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <footer class="page-end">
 
-<div class="text-white py-4" style="background: url(https://bewegung.jetzt/wp-content/uploads/2017/03/Ohne-Titel-2.001-1.jpeg); background-position: center center; background-size: cover">
+<div id="spenden" class="text-white py-4" style="background: url(/wp-content/uploads/2017/03/Ohne-Titel-2.001-1.jpeg); background-position: center center; background-size: cover">
     <div class="container py-5">
       <form id="donationForm" class="donate">
         <div id="donationCarousel" class="carousel slide" data-interval="0" data-ride="false">
@@ -23,58 +23,46 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <!-- FIRST PAGE -->
                 <div class="col-md-5 py-5">
                   <h1>Die demokratische Revolution <u>braucht Dich!</u></h1>
-                  <p>Text, der Menschen überzeugt zu spenden. Lorem Ipsum und so weiter und so fort - weißte selbst, kennste alles!</p>
+                  <p>Unterstütze DiB mit einer Spende!</p>
                 </div>
                 <div class="col-md-5 py-5 h5">
                   <input name="pk_campaign" value="website-form-below" type="hidden">
                   <div class="container">
                     <div class="row">
-                      <div class="form-check col-md-3">
-                        <input class="form-check-input" name="amount" id="five-hun" value="500" type="radio">
-                        <label class="form-check-label" for="five-hun">
-                          500
-                        </label>
-                      </div>
-                      <div class="form-check col-md-3">
-                        <input class="form-check-input" name="amount" id="two-hun" value="200" type="radio">
-                        <label class="form-check-label" for="two-hun">
-                          200
-                        </label>
-                      </div>
-                      <div class="form-check col-md-3">
+                      <div class="form-check col-4">
                         <input class="form-check-input" name="amount" id="one-hun" value="100" type="radio">
                         <label class="form-check-label" for="one-hun">
                           100
                         </label>
                       </div>
-                      <div class="form-check col-md-3">
+                      <div class="form-check col-4">
                         <input class="form-check-input" name="amount" id="fifty" value="50" type="radio">
                         <label class="form-check-label" for="fifty">
                           50
                         </label>
                       </div>
-                    </div>
-                    <div class="row mt-2">
-                      <div class="form-check col-md-3">
+                      <div class="form-check col-4">
                         <input class="form-check-input" name="amount" id="twenty" value="20" type="radio">
                         <label class="form-check-label" for="twenty">
                           20
                         </label>
                       </div>
-                      <div class="form-check col-md-3">
+                    </div>
+                    <div class="row mt-2">
+                      <div class="form-check col-4">
                         <input class="form-check-input" name="amount" id="ten" value="10" type="radio">
                         <label class="form-check-label" for="ten">
                           10
                         </label>
                       </div>
-                      <div class="form-check col-md-3">
+                      <div class="form-check col-4">
                         <input class="form-check-input" name="amount" id="five" value="5" type="radio">
                         <label class="form-check-label" for="five">
                           5
                         </label>
                       </div>
-                      <div class="form-check col-md-3">
-                        <input class="custom" placeholder="Anderer" name="amount-alternative" id="" value="" type="number">
+                      <div class="form-check col-4">
+                        <input class="custom" placeholder="Anderer" name="amount-alternative" id="custom-value" value="" type="number">
                       </div>
                     </div>
                     <div class="row mt-2">
@@ -154,13 +142,13 @@ $container = get_theme_mod( 'understrap_container_type' );
                     
                 </div>
                 <div class="col-md-5 py-4">
-                  <h4>Bankverbindung<a role="button" class="btn js-switch-to-amounts text-muted small">andere Zahlungsweise</a></h4>
+                  <h4>Bankverbindung<a href="/spenden" role="button" class="btn js-switch-to-amounts text-akz-blue small">andere Zahlungsweise</a></h4>
                   <div>
                     <input placeholder="Kontoinhaber*in" maxlength="150" name="payment[bank_account_owner]" class="form-control col-md-12 outline mt-1" id="payment_bank_account_owner" type="text">
                     <input placeholder="IBAN" name="payment[bank_iban]" id="payment_bank_iban" class="form-control col-md-12 outline mt-1" type="text">
                     <input placeholder="BIC/Swift" name="payment[bank_bic]" class="form-control col-md-12 outline mt-1" id="payment_bank_bic" type="text">             
                   </div>
-                  <p class="small">Hiermit stimme ich der Abbuchung der Spende zu und bestätige, dass ich Kontoinhaber/-in bin.</p>
+                  <p class="small">Hiermit stimme ich der Abbuchung der Spende zu und bestätige, dass ich Kontoinhaber*in bin.</p>
                   <div class="d-flex justify-content-between">
                     <a target="_blank" href="http://www.fundraisingbox.com"><img style="border: 0 !important" src="https://secure.fundraisingbox.com/images/FundraisingBox-Logo-Widget.png" alt="FundraisingBox Logo" border="0"></a>
                     <button type="submit" class="btn btn-primary btn-lg">Jetzt spenden</button>
@@ -241,7 +229,33 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div><!-- #page we need this extra closing tag here -->
 
 <?php wp_footer(); ?>
+<script src="https://secure.fundraisingbox.com/js/jquery.fundraisingbox.min.js"></script>
+<script>
+  // Donation Form on bottom
+jQuery(function($) {
+    window.dForm = $("#donationForm").fundraisingBoxForm({
+        hash: "etw2tjn1o1ecw38z" // replace {your_form_hash} with your hash without {}-brackets
+    });
 
+    $('#custom-value').change(function(){
+      $('input[name=amount]:checked').attr('checked', false);
+    });
+    $('input[name=amount]').change(function(){
+      $('#custom-value').val('');
+    });
+
+    $('.js-switch-to-donate').click(function() {
+      var amnt = $('#custom-value').val() || $('input[name=amount]:checked').val();
+      if(!amnt) return;
+      $('.js-amount-lbl').text(amnt);
+      $('.js-amount-value').val(amnt);
+      $("#donationCarousel").carousel(1);
+    });
+    $('.js-switch-to-amounts').click(function() {
+      $("#donationCarousel").carousel(0);
+    });
+});
+</script>
 </body>
 
 </html>

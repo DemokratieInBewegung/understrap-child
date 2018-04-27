@@ -1,4 +1,13 @@
-ul.list-checkmarks li:before {
-  content: "✔️";
-  display: inline-block;
+ul.list-checkmarks {
+  li {
+    padding-left: 1em;
+    &:before {
+      @include fa-icon();
+      content: $fa-var-check;
+      display: inline-block;
+      margin-left: -1.25em;
+      width: 1.25em;
+      color: $akz-darkgreen;
+    }
+  }
 }
