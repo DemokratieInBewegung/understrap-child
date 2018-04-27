@@ -12426,7 +12426,7 @@ quote:first-letter {
 .ultrawide {
   font-size: 1.125em;
   font-weight: 300; }
-  @media (min-width(var(--breakpoint-md))) {
+  @media (min-width: 768px) {
     .ultrawide {
       font-size: 1.5em; } }
   .ultrawide .entry-title {
@@ -12449,14 +12449,14 @@ quote:first-letter {
     font-weight: 300; }
   .ultrawide .spaced {
     margin-top: 1.5em; }
-    @media (min-width(var(--breakpoint-md))) {
+    @media (min-width: 768px) {
       .ultrawide .spaced {
-        font-size: 3em; } }
+        margin-top: 3em; } }
   .ultrawide .doublespaced {
     margin-top: 3em; }
-    @media (min-width(var(--breakpoint-md))) {
+    @media (min-width: 768px) {
       .ultrawide .doublespaced {
-        font-size: 6em; } }
+        margin-top: 6em; } }
   .ultrawide .wp-block-image img {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
