@@ -1,0 +1,17 @@
+.em-pagination {
+  text-align: center;
+  display: block;
+}
+
+.page-numbers {
+  border: 1px solid $gray-400;
+  border-radius: 50%;
+  height: 2em;
+  width: 2em;
+  display: inline-block;
+  text-align: center;
+  &.current {
+    color: $akz-pink;
+    border-color: $akz-pink;
+  }
+}

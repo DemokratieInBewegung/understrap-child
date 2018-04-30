@@ -58,24 +58,6 @@ body.home .entry-header {
 }
 
 
-.bw-hovering {
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  filter: grayscale(100%);
-  filter: gray; /* IE 6-9 */;
-  transition: filter 1s ease;
-  &:hover {
-  -webkit-filter: unset;
-  -moz-filter: unset;
-  -ms-filter: unset;
-  -o-filter: unset;
-  filter: unset;
-
-  }
-}
-
 .inline-icon {
   display:inline-block;
   width: 2em;
@@ -175,5 +157,7 @@ quote {
 @import "ultrawide";
 
 // elements
+@import "elements/pagination";
 @import "elements/checklist";
-@import "elements/_donate";
+@import "elements/black_white_hovering";
+@import "elements/donate";

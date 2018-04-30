@@ -12339,26 +12339,6 @@ body.home .entry-header {
   padding: 0;
   border: 10px solid white; }
 
-.bw-hovering {
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  filter: grayscale(100%);
-  -webkit-filter: gray;
-          filter: gray;
-  /* IE 6-9 */
-  -webkit-transition: -webkit-filter 1s ease;
-  transition: -webkit-filter 1s ease;
-  transition: filter 1s ease;
-  transition: filter 1s ease, -webkit-filter 1s ease; }
-  .bw-hovering:hover {
-    -webkit-filter: unset;
-    -moz-filter: unset;
-    -ms-filter: unset;
-    -o-filter: unset;
-    filter: unset; }
-
 .inline-icon {
   display: inline-block;
   width: 2em;
@@ -12477,6 +12457,21 @@ quote:first-letter {
     -o-filter: unset;
     filter: unset; }
 
+.em-pagination {
+  text-align: center;
+  display: block; }
+
+.page-numbers {
+  border: 1px solid #ced4da;
+  border-radius: 50%;
+  height: 2em;
+  width: 2em;
+  display: inline-block;
+  text-align: center; }
+  .page-numbers.current {
+    color: #eb4a88;
+    border-color: #eb4a88; }
+
 ul.list-checkmarks li {
   padding-left: 1em; }
   ul.list-checkmarks li:before {
@@ -12491,6 +12486,29 @@ ul.list-checkmarks li {
     margin-left: -1.25em;
     width: 1.25em;
     color: #2c8d68; }
+
+figure.bw-hovering img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-filter: gray;
+          filter: gray;
+  /* IE 6-9 */
+  -webkit-transition: -webkit-filter 1s ease;
+  transition: -webkit-filter 1s ease;
+  transition: filter 1s ease;
+  transition: filter 1s ease, -webkit-filter 1s ease; }
+  figure.bw-hovering img:hover {
+    -webkit-filter: unset;
+    -moz-filter: unset;
+    -ms-filter: unset;
+    -o-filter: unset;
+    filter: unset; }
+
+figure.bw-hovering figcaption {
+  color: inherit; }
 
 .donate .form-check-input {
   display: none; }
