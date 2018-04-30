@@ -102,19 +102,23 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <h4>Kontakt-Informationen</h4>
 
 
+                    <?php echo do_shortcode('[mautic type="content" slot="user-info"]
                     <div class="row no-gutters">
-                      <div class="col-md-6 mb-1">
-                        <input class="form-control outline" placeholder="Vorname" id="payment_first_name" name="payment[first_name]" type="text">
+                        <div class="col-md-6 mb-1">
+                            <input class="form-control outline" placeholder="Vorname" id="payment_first_name" name="payment[first_name]" type="text">
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <input class="form-control outline" placeholder="Nachname" id="payment_last_name" name="payment[last_name]" type="text">
+                        </div>
+                        <div class="col-md-7 mb-1">
+                            <input class="form-control outline" placeholder="E-Mail" id="payment_email" name="payment[email]" type="text">
+                        </div>
+                        <div class="col-md-5 mb-1">
+                            <input class="form-control outline" placeholder="Telefon (optional)" id="payment_phone" name="payment[phone]" type="text">
+                        </div>
                       </div>
-                      <div class="col-md-6 mb-1">
-                        <input class="form-control outline" placeholder="Nachname" id="payment_last_name" name="payment[last_name]" type="text">
-                      </div>
-                      <div class="col-md-7 mb-1">
-                        <input class="form-control outline" placeholder="E-Mail" id="payment_last_name" name="payment[email]" type="text">
-                      </div>
-                      <div class="col-md-5 mb-1">
-                        <input class="form-control outline" placeholder="Telefon (optional)" id="payment_phone" name="payment[phone]" type="text">
-                      </div>
+                    [/mautic]'); ?>
+                    <div class="row no-gutters">
                       <div class="col-md-12 mb-1">
                         <select name="payment[person_custom_field_2445]" class="form-control outline" id="payment_person_custom_field_2445">
                           <option value="" selected="selected">(Bitte Bundesland wählen)</option>
@@ -229,33 +233,60 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div><!-- #page we need this extra closing tag here -->
 
 <?php wp_footer(); ?>
-<script src="https://secure.fundraisingbox.com/js/jquery.fundraisingbox.min.js"></script>
 <script>
-  // Donation Form on bottom
 jQuery(function($) {
-    window.dForm = $("#donationForm").fundraisingBoxForm({
-        hash: "etw2tjn1o1ecw38z" // replace {your_form_hash} with your hash without {}-brackets
-    });
+    // Donation Form on bottom
+    var head            = document.getElementsByTagName('head')[0];
+    var script          = document.createElement('script');
+    script.type         = 'text/javascript';
+    script.src          = 'https://secure.fundraisingbox.com/js/jquery.fundraisingbox.min.js';
+    script.async        = true;
+    script.onload       = function() {
+      window.dForm = $("#donationForm").fundraisingBoxForm({
+          hash: "etw2tjn1o1ecw38z"
+      });
 
-    $('#custom-value').change(function(){
-      $('input[name=amount]:checked').attr('checked', false);
-    });
-    $('input[name=amount]').change(function(){
-      $('#custom-value').val('');
-    });
+      $('#custom-value').change(function(){
+        $('input[name=amount]:checked').attr('checked', false);
+      });
+      $('input[name=amount]').change(function(){
+        $('#custom-value').val('');
+      });
 
-    $('.js-switch-to-donate').click(function() {
-      var amnt = $('#custom-value').val() || $('input[name=amount]:checked').val();
-      if(!amnt) return;
-      $('.js-amount-lbl').text(amnt);
-      $('.js-amount-value').val(amnt);
-      $("#donationCarousel").carousel(1);
-    });
-    $('.js-switch-to-amounts').click(function() {
-      $("#donationCarousel").carousel(0);
-    });
+      $('.js-switch-to-donate').click(function() {
+        var amnt = $('#custom-value').val() || $('input[name=amount]:checked').val();
+        if(!amnt) return;
+        $('.js-amount-lbl').text(amnt);
+        $('.js-amount-value').val(amnt);
+        $("#donationCarousel").carousel(1);
+      });
+      $('.js-switch-to-amounts').click(function() {
+        $("#donationCarousel").carousel(0);
+      });
+    };
+    head.appendChild(script);
 });
 </script>
+<script type="text/javascript">
+    /** This section is only needed once per page if manually copying **/
+    if (typeof MauticSDKLoaded == 'undefined') {
+        var MauticSDKLoaded = true;
+        var head            = document.getElementsByTagName('head')[0];
+        var script          = document.createElement('script');
+        script.type         = 'text/javascript';
+        script.src          = 'https://mautic.bewegung.jetzt/media/js/mautic-form.js';
+        script.async        = true;
+        script.onload       = function() {
+            MauticSDK.onLoad();
+        };
+        head.appendChild(script);
+        var MauticDomain = 'https://mautic.bewegung.jetzt';
+        var MauticLang   = {
+            'submittingMessage': "Bitte warten..."
+        }
+    }
+</script>
+
 </body>
 
 </html>
