@@ -24,6 +24,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 </head>
 
 <body <?php body_class(); ?>>
+<div hidden>
+	<?php get_template_part( 'loop-templates/sprite', 'svg' ); ?>
+</div>
 
 <div class="hfeed site" id="page">
 
