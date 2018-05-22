@@ -100,9 +100,6 @@ $container = get_theme_mod( 'understrap_container_type' );
                   </div>
                   <div class="pt-2">
                     <h4>Kontakt-Informationen</h4>
-
-
-                    <?php echo do_shortcode('[mautic type="content" slot="user-info"]
                     <div class="row no-gutters">
                         <div class="col-md-6 mb-1">
                             <input class="form-control outline" placeholder="Vorname" id="payment_first_name" name="payment[first_name]" type="text">
@@ -117,7 +114,6 @@ $container = get_theme_mod( 'understrap_container_type' );
                             <input class="form-control outline" placeholder="Telefon (optional)" id="payment_phone" name="payment[phone]" type="text">
                         </div>
                       </div>
-                    [/mautic]'); ?>
                     <div class="row no-gutters">
                       <div class="col-md-12 mb-1">
                         <select name="payment[person_custom_field_2445]" class="form-control outline" id="payment_person_custom_field_2445">
@@ -233,7 +229,35 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div><!-- #page we need this extra closing tag here -->
 
 <?php wp_footer(); ?>
-<script>
+
+<script type="text/javascript">
+  var MauticDomain = 'https://mautic.bewegung.jetzt';
+  var MauticLang   = {
+      'submittingMessage': "Bitte warten..."
+  }
+
+jQuery(function($) {
+  // donation carousel and framework
+  $('#custom-value').change(function(){
+    $('input[name=amount]:checked').attr('checked', false);
+  });
+  $('input[name=amount]').change(function(){
+    $('#custom-value').val('');
+  });
+
+  $('.js-switch-to-donate').click(function() {
+    var amnt = $('#custom-value').val() || $('input[name=amount]:checked').val();
+    if(!amnt) return;
+    $('.js-amount-lbl').text(amnt);
+    $('.js-amount-value').val(amnt);
+    $("#donationCarousel").carousel(1);
+  });
+  $('.js-switch-to-amounts').click(function() {
+    $("#donationCarousel").carousel(0);
+  });
+});
+</script>
+<script type="text/plain" data-cookieconsent="required">
 jQuery(function($) {
     // Donation Form on bottom
     var head            = document.getElementsByTagName('head')[0];
@@ -242,50 +266,36 @@ jQuery(function($) {
     script.src          = 'https://secure.fundraisingbox.com/js/jquery.fundraisingbox.min.js';
     script.async        = true;
     script.onload       = function() {
-      window.dForm = $("#donationForm").fundraisingBoxForm({
-          hash: "etw2tjn1o1ecw38z"
-      });
-
-      $('#custom-value').change(function(){
-        $('input[name=amount]:checked').attr('checked', false);
-      });
-      $('input[name=amount]').change(function(){
-        $('#custom-value').val('');
-      });
-
-      $('.js-switch-to-donate').click(function() {
-        var amnt = $('#custom-value').val() || $('input[name=amount]:checked').val();
-        if(!amnt) return;
-        $('.js-amount-lbl').text(amnt);
-        $('.js-amount-value').val(amnt);
-        $("#donationCarousel").carousel(1);
-      });
-      $('.js-switch-to-amounts').click(function() {
-        $("#donationCarousel").carousel(0);
+      jQuery("#donationForm").fundraisingBoxForm({
+          hash: "72769j2tcsgcihsr"
       });
     };
     head.appendChild(script);
 });
 </script>
+<script data-src="https://mautic.bewegung.jetzt/mtc.js" data-cookieconsent="required"></script>
+
+
+<!-- Matomo -->
 <script type="text/javascript">
-    /** This section is only needed once per page if manually copying **/
-    if (typeof MauticSDKLoaded == 'undefined') {
-        var MauticSDKLoaded = true;
-        var head            = document.getElementsByTagName('head')[0];
-        var script          = document.createElement('script');
-        script.type         = 'text/javascript';
-        script.src          = 'https://mautic.bewegung.jetzt/media/js/mautic-form.js';
-        script.async        = true;
-        script.onload       = function() {
-            MauticSDK.onLoad();
-        };
-        head.appendChild(script);
-        var MauticDomain = 'https://mautic.bewegung.jetzt';
-        var MauticLang   = {
-            'submittingMessage': "Bitte warten..."
-        }
-    }
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setCookieDomain", "*.bewegung.jetzt"]);
+  _paq.push(["setDomains", ["*.bewegung.jetzt"]]);
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.bewegung.jetzt/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
 </script>
+<!-- End Matomo Code -->
+
+
 
 </body>
 
