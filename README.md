@@ -1,65 +1,23 @@
-# understrap-child
-Basic Child Theme for UnderStrap Theme Framework: https://github.com/holger1411/understrap
+# DiB Wordpress Theme 2018+
 
-## How it works
-It shares with the parent theme all PHP files and adds its own functions.php on top of the UnderStrap parent themes functions.php.
+## cookie consent
 
-IT DID NOT LOAD THE PARENT THEMES CSS FILE(S)!
-Instead it uses the UnderStrap Parent Theme as dependency via npm and compiles its own CSS file from it.
+This comes with an automatically triggering cookie-consent script based on [insites cookie consent script](https://cookieconsent.insites.com/)
 
-Uses the Enqueue method the load and sort the CSS file the right way instead of the old @import method.
-
-## Installation
-1. Install the parent theme UnderStrap first: https://github.com/holger1411/understrap
-- IMPORTANT: If you download it from GitHub make sure you rename the "understrap-master.zip" file just to "understrap.zip" or you might have problems using this child themes !!
-
-2. Just upload the understrap-child folder to your wp-content/themes directory
-3. Go into your WP admin backend 
-4. Go to "Appearance -> Themes"
-5. Activate the UnderStrap Child theme
-
-## Editing
-Add your own CSS styles to /sass/theme/_child_theme.scss
-or import you own files into /sass/theme/understrap-child.scss
-
-To overwrite Bootstrap or UnderStraps base variables just add your own value to:
-/sass/theme/_child_theme_variables.scss
-
-For example:
-the "$brand-primary" variable is used by both, Bootstrap and UnderStrap.
-Add your own color like:
-$brand-primary: #ff6600;
-in /sass/theme/_child_theme_variables.scss to overwrite it.
-That will change automatically all elements who use this variable.
-It will be outputted into:
-/css/understrap-child.min.css
-and
-/css/understrap-child.css
-
-So you have one clean CSS file at the end and just one request.
-
-## Developing With NPM, Gulp, SASS and Browser Sync
-
-### Installing Dependencies
-- Make sure you have installed Node.js, Gulp, and Browser-Sync [1] on your computer globally
-- Then open your terminal and browse to the location of your UnderStrap copy
-- Run: `$ npm install` then: `$ gulp copy-assets`
-
-### Running
-To work and compile your Sass files on the fly start:
-
-- `$ gulp watch`
-
-Or, to run with Browser-Sync:
-
-- First change the browser-sync options to reflect your environment in the file `/gulpconfig.json` in the beginning of the file:
-```javascript
-  "browserSyncOptions" : {
-    "proxy": "localhost/wordpress/",
-    "notify": false
-  }
-};
+```html
+<link rel="https://bewegung.jetzt/cookieconsent/css" type="stylesheet" />
+<script src="https://bewegung.jetzt/cookieconsent/js" type="text/javascript" />
 ```
-- then run: `$ gulp watch-bs`
 
-[1] Visit [https://browsersync.io/](https://browsersync.io/) for more information on Browser Sync
+Additionally, this cookie consent handels Matomo/Piwik automatically (if it is deployed on the default mode in the `_paq`-variable) and allows you to guard scripts and iframes to only load after consent has been giving. For that add the `data-cookieconsent="required"` attribute to the html-element in question. If a `data-src` is given, its result will be copied into the  `src`-attribute once consent is given (useful for iframes), if the element has a `type="text/plain"` the node will be replaced with the same but setting the mime to `text/javascript`.
+
+Examples:
+
+```html
+<!-- this iframe doesn't have a proper 'src' so nothing will be loaded and consent is confirmed, then the data-src will be loaded -->
+<iframe data-cookieconsent="required" data-src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fdemokratiebewegen%2Fvideos%2F1931725730428277%2F&amp;show_text=0&amp;width=560" width="560" height="315" frameborder="0"></iframe>
+
+<!-- this script will be ignored by the browser, until consent is confirmed --><script data-cookieconsent="required" type="text/plain">
+alert("Thanks for consenting!")
+</script>
+```
