@@ -13,7 +13,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <footer class="page-end">
 
-<div id="spenden" class="text-white py-4" style="background: url(/wp-content/uploads/2017/03/Ohne-Titel-2.001-1.jpeg); background-position: center center; background-size: cover">
+<div id="spenden" class="text-white py-4" style="background: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/backdrops/donations.jpg); background-position: center center; background-size: cover">
     <div class="container py-5">
       <form id="donationForm" class="donate">
         <div id="donationCarousel" class="carousel slide" data-interval="0" data-ride="false">
@@ -150,7 +150,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                   </div>
                   <p class="small">Hiermit stimme ich der Abbuchung der Spende zu und bestätige, dass ich Kontoinhaber*in bin.</p>
                   <div class="d-flex justify-content-between">
-                    <a target="_blank" href="http://www.fundraisingbox.com"><img style="border: 0 !important" src="https://secure.fundraisingbox.com/images/FundraisingBox-Logo-Widget.png" alt="FundraisingBox Logo" border="0"></a>
+                    <a target="_blank" href="http://www.fundraisingbox.com"><img style="border: 0 !important" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logos/FundraisingBox-Logo-Widget.png" alt="FundraisingBox Logo" border="0"></a>
                     <button type="submit" class="btn btn-primary btn-lg">Jetzt spenden</button>
                   </div>
 
