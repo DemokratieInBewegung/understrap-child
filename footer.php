@@ -15,7 +15,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div id="spenden" class="text-white py-4" style="background: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/backdrops/donations.jpg); background-position: center center; background-size: cover">
     <div class="container py-5">
-      <form id="donationForm" class="donate">
+      <form id="donationForm" class="donate" action="/spenden/" method="GET">
         <div id="donationCarousel" class="carousel slide" data-interval="0" data-ride="false">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -27,22 +27,23 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </div>
                 <div class="col-md-5 py-5 h5">
                   <input name="pk_campaign" value="website-form-below" type="hidden">
+                  <input name="amount" value="" type="hidden" class="js-amount-value">
                   <div class="container">
                     <div class="row">
                       <div class="form-check col-4">
-                        <input class="form-check-input" name="amount" id="one-hun" value="100" type="radio">
+                        <input class="form-check-input" name="amount-choice" id="one-hun" value="100" type="radio">
                         <label class="form-check-label" for="one-hun">
                           100
                         </label>
                       </div>
                       <div class="form-check col-4">
-                        <input class="form-check-input" name="amount" id="fifty" value="50" type="radio">
+                        <input class="form-check-input" name="amount-choice" id="fifty" value="50" type="radio">
                         <label class="form-check-label" for="fifty">
                           50
                         </label>
                       </div>
                       <div class="form-check col-4">
-                        <input class="form-check-input" name="amount" id="twenty" value="20" type="radio">
+                        <input class="form-check-input" name="amount-choice" id="twenty" value="20" type="radio">
                         <label class="form-check-label" for="twenty">
                           20
                         </label>
@@ -50,13 +51,13 @@ $container = get_theme_mod( 'understrap_container_type' );
                     </div>
                     <div class="row mt-2">
                       <div class="form-check col-4">
-                        <input class="form-check-input" name="amount" id="ten" value="10" type="radio">
+                        <input class="form-check-input" name="amount-choice" id="ten" value="10" type="radio">
                         <label class="form-check-label" for="ten">
                           10
                         </label>
                       </div>
                       <div class="form-check col-4">
-                        <input class="form-check-input" name="amount" id="five" value="5" type="radio">
+                        <input class="form-check-input" name="amount-choice" id="five" value="5" type="radio">
                         <label class="form-check-label" for="five">
                           5
                         </label>
@@ -81,42 +82,42 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <h2><span class="js-amount-lbl"></span> EUR spenden <a role="button" class="btn js-switch-to-amounts text-muted small">Betrag ändern</a></h2>
                   <div>
                     <label>
-                      <input checked="" name="payment[interval]" value="0" type="radio"> einmaling 
+                      <input checked="" name="interval" value="0" type="radio"> einmaling 
                     </label>
                     <label>
-                      <input name="payment[interval]" value="1" type="radio"> monatlich 
+                      <input name="interval" value="1" type="radio"> monatlich 
                     </label>
                     <label>
-                      <input name="payment[interval]" value="6" type="radio"> halbjährlich 
+                      <input name="interval" value="6" type="radio"> halbjährlich 
                     </label>
                     <label>
-                      <input name="payment[interval]" value="12" type="radio"> jährlich 
+                      <input name="interval" value="12" type="radio"> jährlich 
                     </label>
                   </div>
                   <div>
                     <label>
-                      <input name="payment[wants_receipt]" value="receipt_now" type="checkbox"> Ich möchte eine Spendenquitting erhalten
+                      <input name="wants_receipt" value="receipt_now" type="checkbox"> Ich möchte eine Spendenquitting erhalten
                     </label>
                   </div>
                   <div class="pt-2">
                     <h4>Kontakt-Informationen</h4>
                     <div class="row no-gutters">
                         <div class="col-md-6 mb-1">
-                            <input class="form-control outline" placeholder="Vorname" id="payment_first_name" name="payment[first_name]" type="text">
+                            <input class="form-control outline" placeholder="Vorname" id="payment_first_name" name="first_name" type="text">
                         </div>
                         <div class="col-md-6 mb-1">
-                            <input class="form-control outline" placeholder="Nachname" id="payment_last_name" name="payment[last_name]" type="text">
+                            <input class="form-control outline" placeholder="Nachname" id="payment_last_name" name="last_name" type="text">
                         </div>
                         <div class="col-md-7 mb-1">
-                            <input class="form-control outline" placeholder="E-Mail" id="payment_email" name="payment[email]" type="text">
+                            <input class="form-control outline" placeholder="E-Mail" id="payment_email" name="email" type="text">
                         </div>
                         <div class="col-md-5 mb-1">
-                            <input class="form-control outline" placeholder="Telefon (optional)" id="payment_phone" name="payment[phone]" type="text">
+                            <input class="form-control outline" placeholder="Telefon (optional)" id="payment_phone" name="phone" type="text">
                         </div>
                       </div>
                     <div class="row no-gutters">
                       <div class="col-md-12 mb-1">
-                        <select name="payment[person_custom_field_2445]" class="form-control outline" id="payment_person_custom_field_2445">
+                        <select name="person_custom_field_2445" class="form-control outline" id="payment_person_custom_field_2445">
                           <option value="" selected="selected">(Bitte Bundesland wählen)</option>
                           <option value="Baden-Württemberg">Baden-Württemberg</option>
                           <option value="Bayern">Bayern</option>
@@ -142,11 +143,11 @@ $container = get_theme_mod( 'understrap_container_type' );
                     
                 </div>
                 <div class="col-md-5 py-4">
-                  <h4>Bankverbindung<a href="/spenden" role="button" class="btn js-switch-to-amounts text-akz-blue small">andere Zahlungsweise</a></h4>
+                  <h4>Bankverbindung <button type="submit" class="btn js-switch-to-amounts text-akz-blue small">andere Zahlungsweise</button></h4>
                   <div>
-                    <input placeholder="Kontoinhaber*in" maxlength="150" name="payment[bank_account_owner]" class="form-control col-md-12 outline mt-1" id="payment_bank_account_owner" type="text">
-                    <input placeholder="IBAN" name="payment[bank_iban]" id="payment_bank_iban" class="form-control col-md-12 outline mt-1" type="text">
-                    <input placeholder="BIC/Swift" name="payment[bank_bic]" class="form-control col-md-12 outline mt-1" id="payment_bank_bic" type="text">             
+                    <input placeholder="Kontoinhaber*in" maxlength="150" name="bank_account_owner" class="form-control col-md-12 outline mt-1" id="payment_bank_account_owner" type="text">
+                    <input placeholder="IBAN" name="bank_iban" id="payment_bank_iban" class="form-control col-md-12 outline mt-1" type="text">
+                    <input placeholder="BIC/Swift" name="bank_bic" class="form-control col-md-12 outline mt-1" id="payment_bank_bic" type="text">             
                   </div>
                   <p class="small">Hiermit stimme ich der Abbuchung der Spende zu und bestätige, dass ich Kontoinhaber*in bin.</p>
                   <div class="d-flex justify-content-between">
@@ -239,14 +240,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 jQuery(function($) {
   // donation carousel and framework
   $('#custom-value').change(function(){
-    $('input[name=amount]:checked').attr('checked', false);
+    $('input[name=amount-choice]:checked').attr('checked', false);
   });
-  $('input[name=amount]').change(function(){
+  $('input[name=amount-choice]').change(function(){
     $('#custom-value').val('');
   });
 
   $('.js-switch-to-donate').click(function() {
-    var amnt = $('#custom-value').val() || $('input[name=amount]:checked').val();
+    var amnt = $('#custom-value').val() || $('input[name=amount-choice]:checked').val();
     if(!amnt) return;
     $('.js-amount-lbl').text(amnt);
     $('.js-amount-value').val(amnt);
@@ -255,22 +256,6 @@ jQuery(function($) {
   $('.js-switch-to-amounts').click(function() {
     $("#donationCarousel").carousel(0);
   });
-});
-</script>
-<script type="text/plain" data-cookieconsent="required">
-jQuery(function($) {
-    // Donation Form on bottom
-    var head            = document.getElementsByTagName('head')[0];
-    var script          = document.createElement('script');
-    script.type         = 'text/javascript';
-    script.src          = 'https://secure.fundraisingbox.com/js/jquery.fundraisingbox.min.js';
-    script.async        = true;
-    script.onload       = function() {
-      jQuery("#donationForm").fundraisingBoxForm({
-          hash: "72769j2tcsgcihsr"
-      });
-    };
-    head.appendChild(script);
 });
 </script>
 
