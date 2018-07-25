@@ -5,7 +5,7 @@
 This comes with an automatically triggering cookie-consent script based on [insites cookie consent script](https://cookieconsent.insites.com/)
 
 ```html
-<link rel="https://bewegung.jetzt/cookieconsent/css" type="stylesheet" />
+<link href="https://bewegung.jetzt/cookieconsent/css" rel="stylesheet" type="text/css" >
 <script src="https://bewegung.jetzt/cookieconsent/js" type="text/javascript" />
 ```
 
