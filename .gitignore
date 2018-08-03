@@ -15,3 +15,5 @@ npm-debug.log
 /vendor/
 
 .idea
+
+.DS_Store
