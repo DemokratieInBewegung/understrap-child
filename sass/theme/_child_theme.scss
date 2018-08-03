@@ -40,6 +40,27 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+nav {
+  #top-right-menu {
+    .btn {
+      background: transparent;
+      border-color: $brand2;
+
+      a {
+        color: $brand2;
+      }
+
+      &:hover {
+        background: $brand2;
+
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
 .menu-item.text-primary a {
   color: $primary;
 }
