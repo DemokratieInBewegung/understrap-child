@@ -94,6 +94,20 @@ body.home .entry-header {
   }
 }
 
+.form-control {
+  height: calc(2.25rem + 6px);
+}
+input {
+  border-width: 3px;
+}
+
+.border-color-brand-primary {
+  border-color: $brand1;
+}
+.border-color-brand-secondary {
+  border-color: $brand2;
+}
+
 footer {
   &.bd-footer {
     background: $blue;
