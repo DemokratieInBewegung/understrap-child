@@ -1,3 +1,16 @@
+// background
+.bg-akz-ultramarine {
+  background-color: $akz-ultramarine;
+}
+
+// border
+.border-color-brand-primary {
+  border-color: $brand1;
+}
+.border-color-brand-secondary {
+  border-color: $brand2;
+}
+
 body {
   &::before {
     background: linear-gradient(90deg, #21466b, #62388E, #eb5c4a);
@@ -97,13 +110,6 @@ body.home .entry-header {
 .form-control {
   height: calc(2.25rem + 6px);
   border-width: 3px;
-}
-
-.border-color-brand-primary {
-  border-color: $brand1;
-}
-.border-color-brand-secondary {
-  border-color: $brand2;
 }
 
 footer {
