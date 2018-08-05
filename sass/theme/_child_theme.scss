@@ -16,6 +16,11 @@ p {
   line-height: 180%;
 }
 
+// link
+a {
+  color: $brand2;
+}
+
 body {
   &::before {
     background: linear-gradient(90deg, #21466b, #62388E, #eb5c4a);
