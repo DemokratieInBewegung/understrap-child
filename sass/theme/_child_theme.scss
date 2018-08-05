@@ -18,6 +18,13 @@
 p {
   line-height: 180%;
 }
+.ultrawide {
+  p {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: initial;
+  }
+}
 
 // link
 a, a:hover {
