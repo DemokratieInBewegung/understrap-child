@@ -28,6 +28,11 @@ a, a:hover {
   color: $brand2;
 }
 
+// whitespace
+.white-space-normal {
+  white-space: normal;
+}
+
 body {
   &::before {
     background: linear-gradient(90deg, #21466b, #62388E, #eb5c4a);
