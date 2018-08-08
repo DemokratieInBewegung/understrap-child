@@ -33,6 +33,11 @@ a, a:hover {
   white-space: normal;
 }
 
+// width
+.min-width-100 {
+  min-width: 100%;
+}
+
 body {
   &::before {
     background: linear-gradient(90deg, #21466b, #62388E, #eb5c4a);
