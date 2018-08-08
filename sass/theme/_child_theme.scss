@@ -210,6 +210,21 @@ quote {
   }
 }
 
+// "Aktuelles" subpage
+article {
+  .read-more-wrap {
+    em {
+      color: $black;
+    }
+    h3 {
+      color: $brand1;
+    }
+    p {
+      color: $black;
+    }
+  }
+}
+
 // pages
 @import "ultrawide";
 
