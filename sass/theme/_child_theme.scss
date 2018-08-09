@@ -42,6 +42,10 @@ a, a:hover {
   padding-bottom: 0;
 }
 
+.page-hero {
+  height: 25rem;
+}
+
 body {
   &::before {
     background: linear-gradient(90deg, #21466b, #62388E, #eb5c4a);
