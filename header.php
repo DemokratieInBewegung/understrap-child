@@ -38,7 +38,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<nav class="row no-gutters navbar navbar-expand-lg align-items-center p-0 mt-2 mb-0">
 
 		<?php if ( 'container' == $container ) : ?>
-			<div class="container p-0" >
+			<div class="container" >
 		<?php endif; ?>
 
 					<!-- Your site title as branding in the menu -->
