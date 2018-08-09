@@ -38,6 +38,10 @@ a, a:hover {
   min-width: 100%;
 }
 
+.wrapper {
+  padding-bottom: 0;
+}
+
 body {
   &::before {
     background: linear-gradient(90deg, #21466b, #62388E, #eb5c4a);
