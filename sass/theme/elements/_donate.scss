@@ -11,6 +11,7 @@
     color: white;
     border: 1px solid white;
     background: transparent;
+    cursor: pointer;
   }
   .form-check-input:checked + .form-check-label {
     background: $akz-pink;
