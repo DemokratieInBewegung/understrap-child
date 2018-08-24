@@ -75,12 +75,12 @@ function dib_login_logo() { ?>
 	<style type="text/css">
 		body.login{ background-image: url(https://wolke.bewegung.jetzt/apps/theming/loginbackground?v=17); background-color: #274f9e; }
 		.login h1 a { background-image: url(https://wolke.bewegung.jetzt/apps/theming/logo?v=17) !important; background-size: 150px !important; height: 150px !important; width: 150px !important; }
-		.login #nav { color: #fff; }
+		.login #nav { color: #fff; !important; }
 		.login #backtoblog a, .login #nav a { color: #fff; }
 		ul.dib li.list-inline-item.text-uppercase {  text-transform: uppercase; width: 100%; font-weight: 500; }
 		ul.dib li.list-inline-item { float: left;  padding: 0 0.5em; }
 		ul.dib a { color: #fff; }
-		ul.dib { color: #fff; list-style: none; font-size: 1.2em; padding-top: 2em !important; }
+		ul.dib { color: #fff; list-style: none; font-size: 1.2em; padding-top: 2em !important; width: 320px; margin: auto; }
 	</style>
 <?php }
 add_action( 'login_enqueue_scripts', 'dib_login_logo' );
