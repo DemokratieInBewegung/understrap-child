@@ -26,6 +26,8 @@ $danger:        #dc3545;
 
 // akzent colors
 $akz-blue:        #4a88eb;
+$akz-blue-05:     #f2f6fa;
+$akz-blue-25:     #b1cbdf;
 $akz-lightblue:   #a4c3f5;
 $akz-darkblue:    #2c518d;
 $akz-purple:      #9B69BA;
@@ -41,6 +43,9 @@ $akz-darkpink:    #8e2c52;
 $akz-grey:        #dddddd;
 $breadcrumb-gray: #ced4da; 
 
+// gradients
+$brand-gradient: linear-gradient(90deg,#21466b,#62388e,#eb5c4a);
+$brand-gradient-alpha: linear-gradient(90deg, transparentize(#21466b, 0.5), transparentize(#62388e, 0.5), transparentize(#eb5c4a, 0.3));
 
 $theme-colors: () !default;
 $theme-colors: map-merge((

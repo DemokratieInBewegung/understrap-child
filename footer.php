@@ -170,19 +170,30 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php endif; ?>
 		<div class="row justify-content-between  align-items-center">
 		  <div class="col justify-content-center">
-
-				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'social',
-						'container_class' => '',
-						'container_id'    => '',
-						'menu_class'      => 'list-inline text-right mt-2 mb-0',
-						'fallback_cb'     => '',
-						'menu_id'         => 'social-footer-menu',
-						'walker'          => new understrap_WP_Bootstrap_Navwalker(),
-					)
-				); ?>
+              <div class="row">
+                  <div class="col-12 col-md-auto">
+                      <div class="list-inline mt-2 mb-0 text-center align-items-center">
+                          <div class="list-inline-item text-uppercase"><span class="inline-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M295.973 160H180.572L215.19 30.184C219.25 14.956 207.756 0 192 0H56C43.971 0 33.8 8.905 32.211 20.828l-31.996 240C-1.704 275.217 9.504 288 24.004 288h118.701L96.646 482.466C93.05 497.649 104.659 512 119.992 512c8.35 0 16.376-4.374 20.778-11.978l175.973-303.997c9.244-15.967-2.288-36.025-20.77-36.025z"></path></svg></span>Direkt zum</div>
+                          <div class="list-inline-item pl-2"><a href="https://portal.bewegung.jetzt"><u>Portal</u></a></div>
+                          <div class="list-inline-item pl-2"><a href="https://marktplatz.bewegung.jetzt/"><u>Marktplatz der Ideen</u></a></div>
+                          <div class="list-inline-item pl-2"><a href="https://abstimmen.bewegung.jetzt/"><u>Plenum</u></a></div>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <!-- The WordPress Menu goes here -->
+		              <?php wp_nav_menu(
+			              array(
+				              'theme_location'  => 'social',
+				              'container_class' => '',
+				              'container_id'    => '',
+				              'menu_class'      => 'list-inline text-center text-md-right mt-2 mb-0',
+				              'fallback_cb'     => '',
+				              'menu_id'         => 'social-footer-menu',
+				              'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+			              )
+		              ); ?>
+                  </div>
+              </div>
 		  </div>
 		</div>
 
