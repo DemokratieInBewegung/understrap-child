@@ -66,3 +66,45 @@ function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
+
+/**
+ * Style WordPress login
+ */
+function dib_login_logo() { ?>
+	<style type="text/css">
+		body.login{ background-image: url(https://wolke.bewegung.jetzt/apps/theming/loginbackground?v=17); background-color: #274f9e; }
+		.login h1 a { background-image: url(https://wolke.bewegung.jetzt/apps/theming/logo?v=17) !important; background-size: 150px !important; height: 150px !important; width: 150px !important; }
+		.login #nav { color: #fff; }
+		.login #backtoblog a, .login #nav a { color: #fff; }
+		ul.dib li.list-inline-item.text-uppercase {  text-transform: uppercase; width: 100%; font-weight: 500; }
+		ul.dib li.list-inline-item { float: left;  padding: 0 0.5em; }
+		ul.dib a { color: #fff; }
+		ul.dib { color: #fff; list-style: none; font-size: 1.2em; padding-top: 2em !important; }
+	</style>
+<?php }
+add_action( 'login_enqueue_scripts', 'dib_login_logo' );
+
+function dib_login_logo_url() {
+	return home_url();
+}
+add_filter( 'login_headerurl', 'dib_login_logo_url' );
+
+function dib_login_logo_url_title() {
+	return get_bloginfo('description');
+}
+add_filter( 'login_headertitle', 'dib_login_logo_url_title' );
+
+function dib_action_login_footer() {
+	echo '
+	<ul class="dib">
+		<li class="list-inline-item text-uppercase">Direkt zum:</li>
+		<li class="list-inline-item"><a href="https://portal.bewegung.jetzt"><u>Portal</u></a></li>
+		<li class="list-inline-item"><a href="https://marktplatz.bewegung.jetzt/"><u>Marktplatz der Ideen</u></a></li>
+		<li class="list-inline-item"><a href="https://abstimmen.bewegung.jetzt/"><u>Plenum</u></a></li>
+	</ul>
+	';
+};
+
+// add the action
+add_action( 'login_footer', 'dib_action_login_footer' );
