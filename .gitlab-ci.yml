@@ -69,4 +69,4 @@ deploy_live:
     - ssh-add <(echo "$LIVE_PRIVATE_KEY")
     - apt-get update && apt-get install rsync -y
   script:
-   - rsync --dry-run -rav --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r --chown=$LIVE_SERVER_WEB_USER:$LIVE_SERVER_WEB_GROUP -e ssh -p "$LIVE_SERVER_PORT ./dist/ "$LIVE_SERVER_USERNAME"@"$LIVE_SERVER":"$LIVE_SERVER_PATH"
+   - rsync --dry-run -rav --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r --chown="$LIVE_SERVER_WEB_USER":"$LIVE_SERVER_WEB_GROUP" -e ssh -p "$LIVE_SERVER_PORT" ./dist/ "$LIVE_SERVER_USERNAME"@"$LIVE_SERVER":"$LIVE_SERVER_PATH"
