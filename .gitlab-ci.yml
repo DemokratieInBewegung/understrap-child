@@ -52,6 +52,8 @@ deploy_for_qa:
 deploy_live:
   stage: deploy_to_production
   when: manual
+  only:
+      - master
   environment:
       name: production
       url: https://bewegung.jetzt
