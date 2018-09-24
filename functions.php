@@ -108,3 +108,8 @@ function dib_action_login_footer() {
 
 // add the action
 add_action( 'login_footer', 'dib_action_login_footer' );
+
+// Set the content width based on the theme's design and stylesheet.
+if ( ! isset( $content_width ) ) {
+	$content_width = 1110; /* pixels */
+}
