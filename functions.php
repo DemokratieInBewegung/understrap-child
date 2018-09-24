@@ -110,9 +110,7 @@ function dib_action_login_footer() {
 add_action( 'login_footer', 'dib_action_login_footer' );
 
 // Set the content width based on the theme's design and stylesheet.
-if ( ! isset( $content_width ) ) {
-	$content_width = 1110; /* pixels */
-}
+$content_width = 1110; /* pixels */
 
 // Add new image size
 add_image_size( 'featured-large', 1110, 400, true ); // width, height, crop
