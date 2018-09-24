@@ -1,0 +1,9 @@
+/*
+Fixes Flex Layout Issues IE10/IE11 #232
+https://github.com/insites/cookieconsent/pull/232
+ */
+.cc-bottom .cc-compliance > .cc-btn,
+.cc-top .cc-compliance > .cc-btn{
+  flex: auto;
+  -ms-flex: auto;
+}
