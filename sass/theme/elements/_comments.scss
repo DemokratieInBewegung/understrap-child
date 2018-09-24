@@ -88,22 +88,20 @@
   }
 
   /* Quotes. */
-  .comment-body .quote .title {
+  .comment-body .quote {
     border-left: 5px solid $akz-blue-25;
+    padding-left: 5px;
+  }
+  .comment-body .quote .title {
     color: $primary;
     padding: 12px 12px 1px 12px;
   }
 
   .comment-body .quote blockquote {
-    border-left: 5px solid $akz-blue-25;
     font-size: 1em;
     padding: 12px 12px 12px 12px;
     margin-left: 0;
     clear: both;
-  }
-
-  .comment-body aside.quote .title .avatar {
-    margin-right: 7px;
   }
 
   .comment-body .quote .title a {
