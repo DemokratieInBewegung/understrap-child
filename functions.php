@@ -113,3 +113,14 @@ add_action( 'login_footer', 'dib_action_login_footer' );
 if ( ! isset( $content_width ) ) {
 	$content_width = 1110; /* pixels */
 }
+
+// Add new image size
+add_image_size( 'featured-large', 1110, 400, true ); // width, height, crop
+
+// Register the the new image size for use in Add Media modal
+function dib_custom_sizes( $sizes ) {
+	return array_merge( $sizes, array(
+		'featured-large' => __( 'Featured Image (1.110 x 400px)' ),
+	) );
+}
+add_filter( 'image_size_names_choose', 'dib_custom_sizes' );
