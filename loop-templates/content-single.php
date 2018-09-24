@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</header><!-- .entry-header -->
 
-	<div class="pt-1 pb-5">
+	<div class="pt-2 pb-5">
 		<?php echo get_the_post_thumbnail( $post->ID, 'featured-large' ); ?>
 	</div>
 
