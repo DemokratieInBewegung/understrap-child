@@ -267,6 +267,13 @@ article {
   }
 }
 
+// content single post-navigation
+nav.container.navigation.post-navigation {
+  margin-top: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 // pages
 @import "ultrawide";
 @import "home";
@@ -276,3 +283,5 @@ article {
 @import "elements/checklist";
 @import "elements/black_white_hovering";
 @import "elements/donate";
+@import "elements/comments";
+@import "elements/cookie-consent";

@@ -1,0 +1,171 @@
+/*
+ * Styles for discourse comments displayed in WordPress
+ * https://github.com/discourse/wp-discourse/blob/master/css/comments.css
+ */
+
+/* Optional CSS for fixing oneboxes and quotes. */
+#comments {
+  aside.onebox {
+    border: 5px solid $akz-blue-25;
+    margin-bottom: 1em;
+    padding: 12px 25px 12px 12px;
+    font-size: 1em;
+  }
+
+  aside.onebox .site-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.4em;
+    margin-bottom: 0.2em;
+  }
+
+  aside.onebox .onebox-body .onebox-avatar {
+    max-height: none;
+    max-width: none;
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+    float: left;
+  }
+
+  .aspect-image {
+    max-width: 20%;
+    min-height: 60px;
+    max-height: 170px;
+    height: auto;
+    width: auto;
+    margin-right: 10px;
+    float: left;
+    clear: both;
+  }
+
+  .aspect-image:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  aside.onebox .onebox-body img {
+    width: 100%;
+    height: auto;
+  }
+
+  aside.onebox header a[href] {
+    color: $akz-darkblue;
+    text-decoration: none;
+  }
+
+  aside.onebox .onebox-body h3, aside.onebox .onebox-body h4 {
+    font-size: 1em;
+    max-width: calc(80% - 10px);
+    margin: 0 0 10px 0;
+    float: left;
+    clear: none;
+    padding-top: 0;
+  }
+
+  aside.onebox .onebox-body a[href] {
+    color: $akz-darkblue;
+    text-decoration: none;
+  }
+
+  aside.onebox .onebox-body p,
+  .onebox-body .tweet {
+    float: left;
+    max-width: calc(80% - 20px);
+    clear: none;
+  }
+
+  article.onebox-body:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Twitter. */
+  .onebox-body .tweet, .onebox-body .tweet + .date {
+    float: left;
+  }
+
+  /* Quotes. */
+  .comment-body .quote .title {
+    border-left: 5px solid $akz-blue-25;
+    color: $primary;
+    padding: 12px 12px 1px 12px;
+  }
+
+  .comment-body .quote blockquote {
+    border-left: 5px solid $akz-blue-25;
+    font-size: 1em;
+    padding: 12px 12px 12px 12px;
+    margin-left: 0;
+    clear: both;
+  }
+
+  .comment-body aside.quote .title .avatar {
+    margin-right: 7px;
+  }
+
+  .comment-body .quote .title a {
+    color: $primary;
+  }
+
+  .comment-body .quote .title a .badge-category {
+    color: $black;
+  }
+
+  span.badge-category-bg {
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  .wpdc-poll-link {
+    display: block;
+  }
+}
+
+
+/* own styles */
+#comments {
+  margin-bottom: 5em;
+
+  .aspect-image {
+    overflow: hidden;
+  }
+  > ol {
+    padding: 1em 0 0 0;
+  }
+
+  .comment {
+    list-style: none;
+    display: block;
+    padding: 0.75em 0 1.5em;
+    border-bottom: 1px solid $akz-grey;
+    margin-bottom: 0.75em;
+
+    .comment-meta {
+      color: $akz-darkblue;
+    }
+    .avatar{
+      width: 64px;
+      height: 64px;
+      float: left;
+      margin-right: 1em;
+    }
+
+    .comment-content {
+      clear: left;
+      padding-top: 0.5em;
+    }
+
+    p {
+      word-wrap: break-word;
+    }
+  }
+  .respond {
+    overflow: auto;
+  }
+}

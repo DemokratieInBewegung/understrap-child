@@ -73,8 +73,8 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
  */
 function dib_login_logo() { ?>
 	<style type="text/css">
-		body.login{ background-image: url(https://wolke.bewegung.jetzt/apps/theming/loginbackground?v=17); background-color: #274f9e; background-position: center; background-size: cover; }
-		.login h1 a { background-image: url(https://wolke.bewegung.jetzt/apps/theming/logo?v=17) !important; background-size: 150px !important; height: 150px !important; width: 150px !important; }
+		body.login{ background-image: url('/wp-content/themes/dist/assets/backdrops/donations.jpg'); background-color: #274f9e; background-position: center; background-size: cover; }
+		.login h1 a { background-image: url('/wp-content/themes/dist/assets/logo.png') !important; background-size: 150px !important; height: 150px !important; width: 150px !important; }
 		.login #nav { color: #fff; !important; }
 		.login #backtoblog a, .login #nav a { color: #fff !important; }
 		ul.dib li.list-inline-item.text-uppercase {  text-transform: uppercase; width: 100%; font-weight: 500; }
@@ -108,3 +108,17 @@ function dib_action_login_footer() {
 
 // add the action
 add_action( 'login_footer', 'dib_action_login_footer' );
+
+// Set the content width based on the theme's design and stylesheet.
+$content_width = 1110; /* pixels */
+
+// Add new image size
+add_image_size( 'featured-large', 1110, 400, true ); // width, height, crop
+
+// Register the the new image size for use in Add Media modal
+function dib_custom_sizes( $sizes ) {
+	return array_merge( $sizes, array(
+		'featured-large' => __( 'Featured Image (1.110 x 400px)' ),
+	) );
+}
+add_filter( 'image_size_names_choose', 'dib_custom_sizes' );
