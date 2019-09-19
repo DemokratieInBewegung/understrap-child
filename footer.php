@@ -7,6 +7,9 @@
  * @package understrap
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
@@ -189,7 +192,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				              'menu_class'      => 'list-inline text-center text-md-right mt-2 mb-0',
 				              'fallback_cb'     => '',
 				              'menu_id'         => 'social-footer-menu',
-				              'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+				              'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 			              )
 		              ); ?>
                   </div>
@@ -229,7 +232,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							'menu_class'      => '',
 							'fallback_cb'     => '',
 							'menu_id'         => 'footer-menu',
-							'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 						)
 					); ?>
 		      </div>
