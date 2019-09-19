@@ -273,7 +273,7 @@ jQuery(function($) {
 });
 </script>
 
-<script type="text/plain">
+<script type="text/plain" data-cookieconsent="required">
     (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
         w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
         m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
@@ -283,7 +283,7 @@ jQuery(function($) {
 </script>
 
 <!-- Matomo -->
-<script type="text/javascript">
+<script type="text/javascript" data-cookieconsent="required">
   var _paq = _paq || [];
   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
   _paq.push(["setCookieDomain", "*.bewegung.jetzt"]);
