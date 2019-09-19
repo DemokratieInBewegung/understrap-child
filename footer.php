@@ -207,7 +207,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row mt-2">
 		      <div class="col">
-		        <small>© 2019 
+		        <small>© <?php echo date("Y"); ?>
 					<!-- Your site title as branding in the menu -->
 					<?php if ( ! has_custom_logo() ) { ?>
 
