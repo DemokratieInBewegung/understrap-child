@@ -7,6 +7,9 @@
  * @package understrap
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
@@ -166,7 +169,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 	<?php if ( 'container' == $container ) : ?>
-		<div class="container" >
+		<div class="container">
 	<?php endif; ?>
 		<div class="row justify-content-between  align-items-center">
 		  <div class="col justify-content-center">
@@ -189,7 +192,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				              'menu_class'      => 'list-inline text-center text-md-right mt-2 mb-0',
 				              'fallback_cb'     => '',
 				              'menu_id'         => 'social-footer-menu',
-				              'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+				              'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 			              )
 		              ); ?>
                   </div>
@@ -198,16 +201,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div>
 
 	<?php if ( 'container' == $container ) : ?>
-		</div >
+		</div>
 	<?php endif; ?>
 
-	<?php get_sidebar( 'footerfull' ); ?>
+    <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
 		<div class="<?php echo esc_attr( $container ); ?>">
 
 		<div class="row mt-2">
 		      <div class="col">
-		        <small>© 2018 
+		        <small>© <?php echo date("Y"); ?>
 					<!-- Your site title as branding in the menu -->
 					<?php if ( ! has_custom_logo() ) { ?>
 
@@ -229,7 +232,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							'menu_class'      => '',
 							'fallback_cb'     => '',
 							'menu_id'         => 'footer-menu',
-							'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 						)
 					); ?>
 		      </div>
