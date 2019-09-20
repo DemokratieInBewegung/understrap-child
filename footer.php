@@ -283,7 +283,7 @@ jQuery(function($) {
 </script>
 
 <!-- Matomo -->
-<script type="text/javascript" data-cookieconsent="required">
+<script type="text/plain" data-cookieconsent="required">
   var _paq = _paq || [];
   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
   _paq.push(["setCookieDomain", "*.bewegung.jetzt"]);
